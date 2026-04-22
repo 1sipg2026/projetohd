@@ -1,0 +1,69 @@
+/* reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variáveis CSS */
+:root {
+    --color-light: #f4f4f4;
+    --color-orange: #ff6600;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Formatações para elementos que sempre se repetem  */
+
+a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+a:hover {
+    color: var(--color-orange);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+
+/* hero da página */
+.hero {
+    height: 100dvh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, .3)),
+    url(../images/motos/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-light);
+}
+
+.header-hero {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.hero-menu {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.motos, .conheca, .galeria {
+    height: 100dvh;
+}
