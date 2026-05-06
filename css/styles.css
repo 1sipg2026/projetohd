@@ -9,6 +9,7 @@
 :root {
     --color-light: #f4f4f4;
     --color-orange: #ff6600;
+    --color-orange-alpha: rgba(255, 102, 0, .15);
     --color-dark: #111;
     --spacing-sm: 10px;
     --spacing-md: 20px;
@@ -46,12 +47,13 @@ ul, ol {
 /* hero da página */
 .hero {
     height: 100dvh;
+    color: var(--color-light);
     background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .3)),
     url(../images/motos/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: var(--color-light);
+    background-attachment: fixed;
 }
 
 .header-hero {
@@ -91,7 +93,7 @@ ul, ol {
 
 .btn {
     border: 2px solid var(--color-orange);
-    background-color: var(--color-orange);
+    background-color: var(--color-orange-alpha);
     padding: var(--spacing-sm) var(--spacing-lg);
     border-radius: 80px;
     transition: .5s;
@@ -118,32 +120,80 @@ ul, ol {
 }
 
 .motos {
-     height: 100dvh;
-     width: 90%;
+     min-height: 100dvh;
+     width: 95%;
+     margin: var(--spacing-sm) auto;
      padding: var(--spacing-md);
      background-color: var(--color-dark);
      color: var(--color-light);
-     margin: var(--spacing-sm) auto;
 }
 
 .grid-motos {
     width: 100%;
+    margin-block: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .moto-item {
+    border: 1px solid rgba(255, 102, 0, .3);
+    box-shadow: 0 0  10px var(--color-orange-alpha);
     width: 30%;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    text-align: center;
+    margin: var(--spacing-md);
+    animation: viewAnimation both;
+    animation-timeline: view(70% 20%);
+    transition: scale .5s;
 }
 
-.moto-item img {
-    width: 100%;
+.moto-item:hover {
+    scale: 1.05;
 }
+
 
 .motos h2 {
     font-size: 8vmin;
 }
 
+.moto-item img {
+    width: 80%;
+    border-radius: 20px;
+}
+
+.moto-item p {
+    width: 80%;
+    text-wrap: balance;
+    line-height: 1.6;
+}
 .color-orange {
     color: var(--color-orange);
+}
+
+
+@keyframes viewAnimation {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        
+    }
+}
+
+@media(width <= 900px){
+    .moto-item { 
+        width: 80%;
+    }
 }
 
 .conheca, .galeria {
