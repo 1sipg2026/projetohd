@@ -11,6 +11,7 @@
     --color-orange: #ff6600;
     --color-orange-alpha: rgba(255, 102, 0, .15);
     --color-dark: #111;
+    --color-black: #000;
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 30px;
@@ -38,7 +39,8 @@ a:hover {
     color: var(--color-orange);
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -49,7 +51,7 @@ ul, ol {
     height: 100dvh;
     color: var(--color-light);
     background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .3)),
-    url(../images/motos/banner.jpg);
+        url(../images/motos/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -109,6 +111,7 @@ ul, ol {
 
 /* Animação da seta do cta */
 @keyframes arrow {
+
     0%,
     100% {
         transform: translateY(-5px);
@@ -120,12 +123,12 @@ ul, ol {
 }
 
 .motos {
-     min-height: 100dvh;
-     width: 95%;
-     margin: var(--spacing-sm) auto;
-     padding: var(--spacing-md);
-     background-color: var(--color-dark);
-     color: var(--color-light);
+    min-height: 100dvh;
+    width: 95%;
+    margin: var(--spacing-sm) auto;
+    padding: var(--spacing-md);
+    background-color: var(--color-dark);
+    color: var(--color-light);
 }
 
 .grid-motos {
@@ -138,7 +141,7 @@ ul, ol {
 
 .moto-item {
     border: 1px solid rgba(255, 102, 0, .3);
-    box-shadow: 0 0  10px var(--color-orange-alpha);
+    box-shadow: 0 0 10px var(--color-orange-alpha);
     width: 30%;
     padding: 25px;
     border-radius: 20px;
@@ -173,6 +176,7 @@ ul, ol {
     text-wrap: balance;
     line-height: 1.6;
 }
+
 .color-orange {
     color: var(--color-orange);
 }
@@ -183,19 +187,82 @@ ul, ol {
         opacity: 0;
         transform: scale(.5);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
-        
+
     }
 }
 
-@media(width <= 900px){
-    .moto-item { 
+@media(width <=900px) {
+    .moto-item {
         width: 80%;
     }
 }
 
-.conheca, .galeria {
-    height: 100dvh;
+.galeria {
+    min-height: 100dvh;
+    color: var(--color-light);
+    width: 95%;
+    margin: auto;
 }
+
+.galeria h2 {
+    font-size: 8vmin;
+    padding-block: var(--spacing-md);
+}
+
+
+.galeria-grid {
+    columns: 3 300px;
+    width: 95%;
+}
+
+.galeria-grid img {
+    width: 100%;
+    display: block;
+    margin: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px dashed var(--color-orange-alpha);
+    /* filter: grayscale(1); */
+    transition: .5s;
+    position: relative;
+}
+
+.galeria-grid img:hover {
+    filter: grayscale(0);
+    scale: 1.2;
+    z-index: 1;
+}
+
+
+.contato{
+    height: 300px;
+    background-color: var(--color-black);
+    margin-top: var(--spacing-lg);
+    color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--spacing-lg);
+
+    h4 {
+        font-size: 3vmin;
+    }
+
+    .icons {
+        display: flex;
+        gap: var(--spacing-md);
+
+        i {
+            color: var(--color-dark);
+
+            &:hover {
+                color: var(--color-orange);
+            }
+        }
+    }
+    
+}
+
